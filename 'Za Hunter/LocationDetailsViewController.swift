@@ -31,5 +31,10 @@ class LocationDetailsViewController: UIViewController {
         super.viewDidLoad()
         print(selectedMapItem.name!)
     }
+    
+    @IBAction func onDirectionsButtonTapped(_ sender: Any) {
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        MKMapItem.openMaps(with: [selectedMapItem], launchOptions: launchOptions)
+    }
 }
 

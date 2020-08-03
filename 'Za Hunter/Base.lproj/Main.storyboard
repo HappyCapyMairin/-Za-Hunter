@@ -76,6 +76,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td8-sw-Y7t">
+                                <rect key="frame" x="107" y="326" width="200" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="dvW-K6-jbd"/>
+                                    <constraint firstAttribute="width" constant="200" id="tc9-uk-tJK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lf6-4q-0vZ">
                                 <rect key="frame" x="107" y="308" width="200" height="46"/>
                                 <constraints>
@@ -96,16 +106,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td8-sw-Y7t">
-                                <rect key="frame" x="107" y="326" width="200" height="126"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOr-jj-8qn">
+                                <rect key="frame" x="150" y="577" width="114" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="126" id="dvW-K6-jbd"/>
-                                    <constraint firstAttribute="width" constant="200" id="tc9-uk-tJK"/>
+                                    <constraint firstAttribute="height" constant="42" id="M95-Tn-j8a"/>
+                                    <constraint firstAttribute="width" constant="114" id="aiC-Yk-p8D"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="24"/>
+                                <state key="normal" title="Directions"/>
+                                <connections>
+                                    <action selector="onDirectionsButtonTapped:" destination="D1z-rS-MeR" eventType="touchUpInside" id="lse-j9-PRC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -113,8 +125,10 @@
                             <constraint firstItem="td8-sw-Y7t" firstAttribute="centerX" secondItem="knf-X7-OdL" secondAttribute="centerX" id="3vY-yb-8EQ"/>
                             <constraint firstItem="CKi-PK-2we" firstAttribute="centerX" secondItem="knf-X7-OdL" secondAttribute="centerX" id="4oF-pH-Vio"/>
                             <constraint firstItem="OXB-3n-jcC" firstAttribute="top" secondItem="td8-sw-Y7t" secondAttribute="bottom" constant="8" id="5e6-NM-v0c"/>
+                            <constraint firstItem="bOr-jj-8qn" firstAttribute="top" secondItem="xSF-FS-0mW" secondAttribute="bottom" constant="8" id="7NY-Aj-UCm"/>
                             <constraint firstItem="t35-Gw-ce8" firstAttribute="centerX" secondItem="knf-X7-OdL" secondAttribute="centerX" id="F7c-jT-NX5"/>
                             <constraint firstItem="xSF-FS-0mW" firstAttribute="centerX" secondItem="knf-X7-OdL" secondAttribute="centerX" id="SCR-pt-P66"/>
+                            <constraint firstItem="bOr-jj-8qn" firstAttribute="centerX" secondItem="knf-X7-OdL" secondAttribute="centerX" id="SfB-M8-fEj"/>
                             <constraint firstItem="lf6-4q-0vZ" firstAttribute="centerX" secondItem="knf-X7-OdL" secondAttribute="centerX" id="aZK-3p-KHC"/>
                             <constraint firstItem="lf6-4q-0vZ" firstAttribute="top" secondItem="CKi-PK-2we" secondAttribute="bottom" constant="30" id="brd-dm-UAG"/>
                             <constraint firstItem="xSF-FS-0mW" firstAttribute="top" secondItem="td8-sw-Y7t" secondAttribute="bottom" constant="67" id="cTY-It-atw"/>
