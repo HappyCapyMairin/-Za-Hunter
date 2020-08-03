@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-
+    
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var region = MKCoordinateRegion()
@@ -24,7 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locationManager.startUpdatingLocation()
         mapView.delegate = self
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first!
         let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
@@ -41,7 +41,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         search.start { (response, error) in
             if let response = response {
                 for mapItem in response.mapItems {
-                    print (mapItem.name!)
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = mapItem.placemark.coordinate
+                    annotation.title = mapItem.name
+                    self.mapView.addAnnotation(annotation)
                 }
             }
         }
