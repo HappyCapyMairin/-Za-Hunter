@@ -8,14 +8,13 @@
 
 import UIKit
 import MapKit
-import CoreLocation //find your location
-
+import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var region = MKCoordinateRegion()
-    var mapItems = [MKMapItem]() //array of map item
+    var mapItems = [MKMapItem]()
     var selectedMapItem = MKMapItem()
     
     override func viewDidLoad() {
@@ -71,6 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: nil)
+    }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         for mapItem in mapItems {
@@ -79,7 +79,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
         }
     }
-}
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocationDetailsViewController {
             destination.selectedMapItem = selectedMapItem

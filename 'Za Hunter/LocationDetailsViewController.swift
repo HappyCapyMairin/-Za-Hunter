@@ -14,10 +14,6 @@ class LocationDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedMapItem)
+        print(selectedMapItem.)
     }
-    
-    
-    
-    
 }
