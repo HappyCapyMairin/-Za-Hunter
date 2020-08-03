@@ -8,13 +8,15 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+import CoreLocation //find your location
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var region = MKCoordinateRegion()
+    var mapItems = [MKMapItem]() //array of map item
+    var selectedMapItem = MKMapItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +47,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     annotation.coordinate = mapItem.placemark.coordinate
                     annotation.title = mapItem.name
                     self.mapView.addAnnotation(annotation)
+                    self.mapItems.append(mapItem)
                 }
             }
         }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "Pin")
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pinView")
+            pinView?.canShowCallout = true
+            pinView?.rightCalloutAccessoryView = UIButton(type: .infoLight)
+        }
+        else {
+            pinView?.annotation = annotation
+        }
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "ShowLocationDetailsSegue", sender: nil)
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        for mapItem in mapItems {
+            if mapItem.placemark.coordinate.latitude == view.annotation?.coordinate.latitude && mapItem.placemark.coordinate.longitude == view.annotation?.coordinate.longitude {
+                selectedMapItem = mapItem
+            }
+        }
+    }
 }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? LocationDetailsViewController {
+            destination.selectedMapItem = selectedMapItem
+        }
+    }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C4BE24B24D8762D00FDDA63 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BE24A24D8762D00FDDA63 /* LocationDetailsViewController.swift */; };
 		3CBA396324D85D7500DB8078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA396224D85D7500DB8078 /* AppDelegate.swift */; };
 		3CBA396524D85D7500DB8078 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA396424D85D7500DB8078 /* SceneDelegate.swift */; };
 		3CBA396724D85D7500DB8078 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA396624D85D7500DB8078 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C4BE24A24D8762D00FDDA63 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		3CBA395F24D85D7500DB8078 /* 'Za Hunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "'Za Hunter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBA396224D85D7500DB8078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CBA396424D85D7500DB8078 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				3CBA396224D85D7500DB8078 /* AppDelegate.swift */,
 				3CBA396424D85D7500DB8078 /* SceneDelegate.swift */,
 				3CBA396624D85D7500DB8078 /* ViewController.swift */,
+				3C4BE24A24D8762D00FDDA63 /* LocationDetailsViewController.swift */,
 				3CBA396824D85D7500DB8078 /* Main.storyboard */,
 				3CBA396B24D85D8900DB8078 /* Assets.xcassets */,
 				3CBA396D24D85D8900DB8078 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C4BE24B24D8762D00FDDA63 /* LocationDetailsViewController.swift in Sources */,
 				3CBA396724D85D7500DB8078 /* ViewController.swift in Sources */,
 				3CBA396324D85D7500DB8078 /* AppDelegate.swift in Sources */,
 				3CBA396524D85D7500DB8078 /* SceneDelegate.swift in Sources */,
